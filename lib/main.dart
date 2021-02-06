@@ -1,54 +1,54 @@
 import 'package:flutter/material.dart';
 
+import 'business_card.dart';
+import 'predictor.dart';
+import 'resume.dart';
+
 void main() {
-  runApp(MyApp());
+  runApp(
+    MaterialApp(
+      home: HomePage(),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+/*
+  This DefaultTabController implementation for
+  the three tabs is found in the flutter official
+  documentation/repo here 
+  https://github.com/flutter/samples/blob/master/isolate_example/lib/main.dart
+*/
+
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Call Me Maybe',
-      theme: ThemeData(
-        primaryColor: Colors.deepPurple,
-        accentColor: Colors.grey,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(title: 'Call Me Maybe'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Placeholder',
+      home: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: TabBar(
+              tabs: [
+                Tab(
+                  icon: Icon(Icons.face),
+                ),
+                Tab(
+                  icon: Icon(Icons.list),
+                ),
+                Tab(
+                  icon: Icon(Icons.help),
+                ),
+              ],
             ),
-            Text(
-              'Placeholder',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+            title: Text('Isolate Example'),
+          ),
+          body: TabBarView(
+            children: [
+              BusinessCard(),
+              Resume(),
+              Predictor(),
+            ],
+          ),
         ),
       ),
     );
