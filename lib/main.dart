@@ -20,6 +20,7 @@ void main() {
 */
 
 class HomePage extends StatelessWidget {
+  final String title = 'Call Me Maybe';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,7 +41,8 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
-            title: Text('Isolate Example'),
+            centerTitle: true,
+            title: Text(this.title),
           ),
           body: TabBarView(
             children: [
