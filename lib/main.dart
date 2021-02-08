@@ -24,6 +24,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primaryColor: Colors.purple[400],
+        accentColor: Colors.grey[500],
+      ),
       home: DefaultTabController(
         length: 3,
         child: Scaffold(
