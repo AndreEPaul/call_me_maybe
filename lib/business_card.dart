@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-// final Uri _linkGithub = Uri(
-//   scheme: 'https',
-//   path: 'github.com/AndreEPaul',
-// );
-
 Future _launchGithub() async {
   const url = 'https://github.com/AndreEPaul';
   if (await canLaunch(url)) {
@@ -36,7 +31,6 @@ class BusinessCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        // TODO: potential centering issue, but this is possibly just on web
         mainAxisAlignment: _mainAlign,
         crossAxisAlignment: _crossAlign,
         children: [
@@ -52,7 +46,6 @@ class BusinessCard extends StatelessWidget {
                   ))),
           Padding(padding: _padding, child: const Text('Software Engineer')),
           Padding(
-              //TODO: change this to redirect to SMS message
               padding: _padding,
               child: const ElevatedButton(
                   onPressed: _launchTextMsg, child: Text('(555)-123-4567'))),
