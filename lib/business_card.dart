@@ -6,8 +6,17 @@ import 'package:url_launcher/url_launcher.dart';
 //   path: 'github.com/AndreEPaul',
 // );
 
-Future _launchURL() async {
+Future _launchGithub() async {
   const url = 'https://github.com/AndreEPaul';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Cant launch $url';
+  }
+}
+
+Future _launchTextMsg() async {
+  const url = 'sms:5551234567';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -38,25 +47,24 @@ class BusinessCard extends StatelessWidget {
           Padding(
               padding: _padding,
               child: const Text('Andre Paul',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                )
-            )
-          ),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ))),
           Padding(padding: _padding, child: const Text('Software Engineer')),
           Padding(
               //TODO: change this to redirect to SMS message
               padding: _padding,
-              child: const Text('555-555-5555')
-          ),
+              child: const ElevatedButton(
+                  onPressed: _launchTextMsg, child: Text('(555)-123-4567'))),
           Padding(
             padding: _padding,
             child: Row(
               mainAxisAlignment: _mainAlign,
               children: [
                 const ElevatedButton(
-                    onPressed: _launchURL, child: Text('GitHub Profile')),
-                Padding(padding: _padding, child: const Text('example@email.com')),
+                    onPressed: _launchGithub, child: Text('GitHub Profile')),
+                Padding(
+                    padding: _padding, child: const Text('example@email.com')),
               ],
             ),
           ),
