@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Predictor extends StatelessWidget {
   @override
-  Widget build(context) {
-    return Placeholder();
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
