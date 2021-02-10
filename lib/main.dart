@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'business_card.dart';
-import 'predictor.dart';
-import 'resume.dart';
+import './components/business_card.dart';
+import './components/predictor.dart';
+import './components/resume.dart';
 
 void main() {
   SystemChrome.setPreferredOrientations([
