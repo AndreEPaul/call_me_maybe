@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter/services.dart';
 import 'business_card.dart';
 import 'predictor.dart';
 import 'resume.dart';
 
 void main() {
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
+    DeviceOrientation.portraitUp,
+  ]);
   runApp(
     MaterialApp(
       home: HomePage(),
