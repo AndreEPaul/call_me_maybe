@@ -30,7 +30,8 @@ class BusinessCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      resizeToAvoidBottomInset: false,
+      body: SingleChildScrollView( child: Column(
         mainAxisAlignment: _mainAlign,
         crossAxisAlignment: _crossAlign,
         children: [
@@ -62,7 +63,7 @@ class BusinessCard extends StatelessWidget {
             ),
           ),
         ],
-      ),
+      )),
     );
   }
 }
