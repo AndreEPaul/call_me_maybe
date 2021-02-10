@@ -31,7 +31,8 @@ class BusinessCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: SingleChildScrollView( child: Column(
+      body: SingleChildScrollView(
+          child: Column(
         mainAxisAlignment: _mainAlign,
         crossAxisAlignment: _crossAlign,
         children: [
