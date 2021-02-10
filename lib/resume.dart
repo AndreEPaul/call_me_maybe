@@ -8,7 +8,7 @@ class Resume extends StatelessWidget {
     return Scaffold(
         body: SingleChildScrollView(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TopOfResume(),
         WorkExperience(),
